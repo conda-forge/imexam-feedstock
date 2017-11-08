@@ -1,7 +1,7 @@
 {% set name = "imexam" %}
-{% set version = "0.7.1" %}
+{% set version = "0.8.0" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "99579305e71f22fd06e4ed95e0d38edd0474832e9b87ef3f6abcd243ed8ad46f" %}
+{% set hash_value = "0bfed706fe997d20d1cd28385d5533dc5c19509cae9d739c90828574c341993b" %}
 
 package:
   name: '{{ name|lower }}'
