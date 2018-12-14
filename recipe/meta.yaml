@@ -1,7 +1,7 @@
 {% set name = "imexam" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "0bfed706fe997d20d1cd28385d5533dc5c19509cae9d739c90828574c341993b" %}
+{% set hash_value = "ca179f34b3f89afc6e9c27d26cbe9f75c5f061f71fb6ebe2e4e1eae6e87ba908" %}
 
 package:
   name: '{{ name|lower }}'
@@ -13,7 +13,7 @@ source:
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --offline --single-version-externally-managed --record=record.txt
 
 requirements:
