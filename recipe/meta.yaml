@@ -1,7 +1,5 @@
 {% set name = "imexam" %}
 {% set version = "0.8.1" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "ca179f34b3f89afc6e9c27d26cbe9f75c5f061f71fb6ebe2e4e1eae6e87ba908" %}
 
 package:
   name: '{{ name|lower }}'
@@ -10,7 +8,7 @@ package:
 source:
   fn: '{{ name }}-{{ version }}.tar.gz'
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  '{{ hash_type }}': '{{ hash_value }}'
+  'sha256': 'ca179f34b3f89afc6e9c27d26cbe9f75c5f061f71fb6ebe2e4e1eae6e87ba908'
 
 build:
   number: 0
