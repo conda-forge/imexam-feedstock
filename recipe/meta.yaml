@@ -12,22 +12,23 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --offline --single-version-externally-managed --record=record.txt
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
     - python
-    - setuptools
+    - pip
+    - setuptools_scm
     - cython
   run:
     - python
-    - astropy
+    - numpy >=1.14
+    - astropy >=3
     - matplotlib
     - ginga
-    - ipython
-    - scipy
+    - scipy >=0.18
     - photutils
 
 test:
@@ -36,7 +37,7 @@ test:
 
 about:
   home: http://imexam.readthedocs.io
-  license: BSD 3-clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: licenses/LICENSE.rst
   summary: A package to help perform command-line image examination and plotting
