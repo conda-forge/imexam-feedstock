@@ -1,33 +1,34 @@
 {% set name = "imexam" %}
-{% set version = "0.8.1" %}
+{% set version = "0.9.1" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.tar.gz'
+  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  'sha256': 'ca179f34b3f89afc6e9c27d26cbe9f75c5f061f71fb6ebe2e4e1eae6e87ba908'
+  sha256: a5b73604b693c003d10e41a77016e3fd16ec035519aa74de8508e6614aa72652
 
 build:
   number: 0
-  script: python setup.py install --offline --single-version-externally-managed --record=record.txt
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
     - python
-    - setuptools
+    - pip
+    - setuptools_scm
     - cython
   run:
     - python
-    - astropy
+    - numpy >=1.14
+    - astropy >=3
     - matplotlib
     - ginga
-    - ipython
-    - scipy
+    - scipy >=0.18
     - photutils
 
 test:
@@ -36,7 +37,7 @@ test:
 
 about:
   home: http://imexam.readthedocs.io
-  license: BSD 3-clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: licenses/LICENSE.rst
   summary: A package to help perform command-line image examination and plotting
