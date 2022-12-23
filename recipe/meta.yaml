@@ -27,7 +27,7 @@ requirements:
     - python
     - numpy >=1.14
     - astropy >=3
-    - matplotlib
+    - matplotlib-base
     - ginga
     - scipy >=0.18
     - photutils
